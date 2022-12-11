@@ -1,0 +1,7 @@
+{
+  "name": "doctrinal-mastery-restart-2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
