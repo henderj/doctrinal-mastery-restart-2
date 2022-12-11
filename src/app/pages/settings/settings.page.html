@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/home']" routerDirection="back">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Account
+    </ion-list-header>
+    <ion-item>
+      <ion-label position="floating">Display Name</ion-label>
+      <ion-input value="Tony Stank" placeholder="Display name cannot be empty!"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button class="ion-margin" size="medium" color="primary" fill="solid" expand="block">
+    Update
+  </ion-button>
+  <ion-button style="margin-top: 20%;" class="ion-margin" size="medium" color="danger" fill="outline" expand="block">
+    Delete Account
+  </ion-button>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Doctrinal Mastery
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="height: 100%; display: flex; flex-flow: column;">
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <h1>
+          Welcome{{userName}}!
+        </h1>
+        <h2>
+          <ion-text color="medium">
+            {{currentBook?.name}}
+          </ion-text>
+        </h2>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-center" style="flex-grow: 1;">
+      <ion-col style="display: flex;">
+        <app-circle-progress style="margin: auto;" [progress]="currentBook?.progress" stroke="10" radius="100"></app-circle-progress>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" expand="block" fill="outline" [routerLink]="['/quick-review']">Quick Review
+        </ion-button>
+        <ion-button size="large" expand="block" fill="solid" class="ion-margin-top" [routerLink]="['/memorize']"
+          routerDirection="forward">Keep Memorizing</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/home']" routerDirection="back">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{book.name}}</ion-title>
+    <ion-progress-bar color="primary" [value]="progressPercent"></ion-progress-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides [options]="slideOptions" class="o-fullsize">
+    <ion-slide *ngFor="let slide of slides; index as i">
+      <app-card class="o-fullsize" *ngIf="slide.useCardChallenge" [book]="slide.book" [item]="slide.item" (finished)="onFinished($event)">
+      </app-card>
+      <app-multiple-choice class="o-fullsize" *ngIf="!slide.useCardChallenge" [book]="slide.book" [item]="slide.item"
+        (finished)="onFinished($event)">
+      </app-multiple-choice>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

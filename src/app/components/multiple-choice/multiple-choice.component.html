@@ -1,0 +1,13 @@
+<div class="o-fullsize-vertical">
+  <div class="multiple-choice-container">
+    <div class="multiple-choice-question">
+      <h2 style="margin: auto 0;">{{item.question}}</h2>
+    </div>
+    <app-mc-group (evaluatedAnswer)="onEvaluatedAnswer($event)" [config]="config"></app-mc-group>
+    <div class="ion-margin-vertical">
+      <ion-button [class.o-no-opacity]="!questionAnswered" color="primary" size="large" fill="solid" expand="block">
+        {{platformTap}} Anywhere to Continue</ion-button>
+    </div>
+  </div>
+  <div *ngIf="questionAnswered" class="multiple-choice-overlay" (click)="onOverlayClicked()"></div>
+</div>
